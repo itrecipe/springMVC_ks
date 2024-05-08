@@ -1,20 +1,18 @@
 package ch03_pjt_03;
 
-public class CalAssembler {
-	MyCalculator calculator;
-	CalAdd calAdd;
-	CalSub calSub;
-	CalMul calMul;
-	CalDiv calDiv;
+    public class CalAssembler {
+		MyCalculator calculator;
+		CalAdd calAdd;
+		CalSub calSub;
+		CalMul calMul;
+		CalDiv calDiv;
 	
 	public CalAssembler(MyCalculator calculator, CalAdd calAdd, CalSub calSub, CalMul calMul, CalDiv calDiv) {
-		
-		this.calculator = calculator; 
+		this.calculator = calculator;
 		this.calAdd = calAdd;
 		this.calSub = calSub;
 		this.calMul = calMul;
 		this.calDiv = calDiv;
-		
 	}
 	
 	public void assemble() {
