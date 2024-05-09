@@ -21,7 +21,6 @@ public class StudentRegisterService {
 	
 	public boolean verify(String sNum) { 
 		Student student = studentDao.select(sNum);
-		return student == null ? true : false;
+		return student == null ? true : false; //삼항연산자 사용
 	}
-
 }
