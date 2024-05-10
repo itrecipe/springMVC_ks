@@ -14,9 +14,13 @@ import ch04_pjt_01.ems.utils.InitSampleData;
 public class MainClass {
 
 	public static void main(String[] args) {
+		
+		//applicationContext.xml 파일을 용도별로 나눈후 배열에 담았다.
+		//String[] appCtxs = {"classpath:appCtx1.xml", "classpath:appCtx2.xml", "classpath:appCtx3.xml"};
+		
 		//IOC 컨테이너를 생성
 		GenericXmlApplicationContext ctx =
-				new GenericXmlApplicationContext("classpath:applicationContext.xml");
+				new GenericXmlApplicationContext("classpath:appCtxImport.xml");
 
 		InitSampleData initSampleData = ctx.getBean("initSampleData", InitSampleData.class);
 		String[] sNums = initSampleData.getsNums();
@@ -83,6 +87,5 @@ public class MainClass {
 		emsInformationService.printEMSInformation();
 		
 		ctx.close();
-		
 	}
 } 
