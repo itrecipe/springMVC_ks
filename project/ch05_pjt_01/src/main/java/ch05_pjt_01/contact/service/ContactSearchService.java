@@ -13,19 +13,23 @@ import ch05_pjt_01_contact.ContactSet;
 //특정 연락처의 정보를 얻을 클래스
 public class ContactSearchService {
 	
-	@Inject
-	@Named("contactDao1")
-	//@Autowired
+	//필드로 주입할때는 기본생성자를 추가하고, 쓰고자 하는 생성자에 Autowired를 걸어준다.
+	
+//	@Inject
+//	@Named("contactDao1")
+//	@Autowired
 //	@Qualifier("usedDao")
 	private ContactDao contactDao;
 	
+	/*
 	public ContactSearchService() {
 		//System.out.println("default constructor");
 	}
+	*/
 	
-	@Inject
-	@Named("contactDao1")
-//	@Autowired
+//	@Inject
+//	@Named("contactDao1")
+	@Autowired
 	public ContactSearchService(ContactDao contactDao) {
 		//System.out.println("contactDao : " + contactDao);
 		this.contactDao = contactDao;
@@ -45,8 +49,8 @@ public class ContactSearchService {
 		return contactSet != null ? true : false;
 	}
 	
-	@Inject
-	@Named("contactDao1")
+//	@Inject
+//	@Named("contactDao1")
 	//@Resource
 	//@Autowired
 	public void setContactDao(ContactDao contactDao) {
